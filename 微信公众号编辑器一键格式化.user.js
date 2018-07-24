@@ -33,7 +33,7 @@
         div.setAttribute("class","edui-box edui-button-body edui-default");
         div.setAttribute("data-tooltip","陈伟专用格式化");
         var btn_name = document.createElement("div");
-        btn_name.setAttribute("style","font-size:14px !important");
+        btn_name.setAttribute("style","font-size:18px !important");
         btn_name.innerHTML = "✪";
         wrap.appendChild(div);
         div.appendChild(btn_name);
