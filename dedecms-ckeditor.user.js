@@ -1,57 +1,70 @@
 // ==UserScript==
-// @name         微信公众号编辑器自动改引号
-// @namespace    https://coding.net/u/BackRunner/p/GreaseMonkey-JS/git
+// @name         ckeditor
+// @namespace    xx
 // @version      1.0
-// @description  在微信公众号编辑器中加入一个用于自动改引号的按钮
-// @author       BackRunner
-// @include      *mp.weixin.qq.com/cgi-bin/appmsg?t=media/appmsg_edit&action=edit*
-// @include      *mp.weixin.qq.com/cgi-bin/appmsg?t=media/appmsg_edit_v2&action=edit*
+// @description  ckeditor
+// @author       chenwei
+// @include      *hnhbxww.com/adminVIP/*
 // @license      MIT
 // @run-at       document-end
 // @grant        unsafeWindow
 // ==/UserScript==
 
 (function() {
-	//Set
-	var toolbar;
+    //Set
+    var toolbar;
 
-	//Run
-	setTimeout(function(){
-		getToolbar();
-		createBtn();
-	},1000);
+    //Run
+    setTimeout(function() {
+        getToolbar();
+        createBtn();
+        Event();
+    }, 1000);
 
 
-	//Functions
-	function getToolbar(){
-		toolbar = document.getElementsByClassName('edui-toolbar-primary');
-	}
-	function createBtn(){
-        var wrap = document.createElement("div");
-        wrap.setAttribute("class","edui-box edui-splitbutton edui-default");
-		var div = document.createElement("div");
-		div.setAttribute("class","edui-box edui-button-body edui-default");
-		div.setAttribute("data-mpa-tooltip","将中文引号替换为「」");
-		var btn_name = document.createElement("div");
-        btn_name.setAttribute("style","font-size:14px !important");
-		btn_name.innerHTML = "替换引号";
-        wrap.appendChild(div);
-		div.appendChild(btn_name);
-		toolbar[0].appendChild(wrap);
-		div.addEventListener('click',Event);
-	}
-	function Event(){
-		var iframe = document.getElementById("ueditor_0");
-		var plist = iframe.contentDocument.getElementsByTagName("p");
-		console.log(plist);
-		for (var i=0;i<plist.length;i++){
-			var s = plist[i].innerHTML;
-			console.log(s);
-            var p1=/(“)/gi;
-			var p2=/(”)/gi;
-			s = s.replace(p1, '「').replace(p2, "」");
-			plist[i].innerHTML = s;
-			//console.log(s);
-		}
-	}
+    //Functions
+    function getToolbar() {
+        toolbar = document.getElementById('cke_62');
+    }
+
+    function createBtn() {
+        var div = document.createElement("div");
+        div.setAttribute("style", "font-size:16px !important");
+        div.innerHTML = "伟";
+        toolbar.appendChild(div);
+        div.addEventListener('click', Event);
+    }
+
+    function Event() {
+        //description
+        var description = document.getElementById('description');
+        description.innerHTML = description.innerHTML.replace(/[\s\S]*/,'');
+        //arcrank
+        var arcrank = document.getElementById('arcrank');
+        arcrank.removeChild( arcrank.childNodes[1] );
+        //iframe
+        var iframe = document.getElementsByTagName('iframe')[0];
+        var html = iframe.contentWindow.document;
+        var body = html.body;
+        body.innerHTML = body.innerHTML.replace(/<p>本文链接地址[\s\S]*/,'');
+        //title
+        //var ititle = html.getElementById('activity-name').innerHTML;
+        //var title = document.getElementById('title');
+        //title.setAttribute("value",ititle);
+        //plist
+        var plist = html.getElementsByTagName("p");
+        for (var i = 0; i < plist.length; i++) {
+            var s = plist[i].outerHTML;
+            //console.log(s);
+            var p1 = /(&nbsp;)/gi;
+            var p2 = /(　)/gi;
+            var p3 = /<p><br><\/p>/;
+            var p4 = /align="center"/;
+            var p5 = /<br.+>/;
+            var p6 = /<p>本文链接地址[\s\S]*/;
+            s = s.replace(p1, '').replace(p2, '').replace(p3, '').replace(p5, '').replace(p4,'').replace(p6,'');
+            plist[i].outerHTML = s;
+            //console.log(s);
+        }
+    }
 })();
