@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  ckeditor
 // @author       chenwei
-// @include      *hnhbxww.com/adminVIP/*
+// @include      *hnhbxww.com/adminVIP/article_edit.php*
 // @license      MIT
 // @run-at       document-end
 // @grant        unsafeWindow
@@ -40,8 +40,10 @@
         var description = document.getElementById('description');
         description.innerHTML = description.innerHTML.replace(/[\s\S]*/,'');
         //writer
+        var author = ["秋风","晨光","宛青","成蹊"];
+        var n = Math.floor(Math.random() * author.length + 1)-1;
         var writer = document.getElementById('writer');
-        writer.setAttribute("value", "晨风");
+        writer.setAttribute("value",author[n]);
         //arcrank
         var arcrank = document.getElementById('arcrank');
         //arcrank.removeChild( arcrank.childNodes[1] );
@@ -53,7 +55,8 @@
         var iframe = document.getElementsByTagName('iframe')[0];
         var html = iframe.contentWindow.document;
         var body = html.body;
-        body.innerHTML = body.innerHTML.replace(/<p>本文链接地址[\s\S]*/,'');
+        body.innerHTML = body.innerHTML.replace(/<p>本文链接地址[\s\S]*/,'').replace(/<p><strong>上一篇[\s\S]*/,'');
+        body.innerHTML = body.innerHTML.replace(/<p><span>人民日报客户端下载[\s\S]*/,'').replace(/<p>【<strong>中国环保在线.+】/,'');
         //title
         //var ititle = html.getElementById('activity-name').innerHTML;
         //var title = document.getElementById('title');
@@ -64,13 +67,11 @@
             var s = plist[i].outerHTML;
             //console.log(s);
             var p1 = /(&nbsp;)/gi;
-            var p2 = /(　)/gi;
-            var p3 = /<p><br><\/p>/;
+            var p2 = /(　)/gi; 
             var p4 = /align="center"/;
             var p5 = /<br.+>/;
-            var p6 = /<p>本文链接地址[\s\S]*/;
-            var p7 = /<p>原标题.*/
-            s = s.replace(p1, '').replace(p2, '').replace(p3, '').replace(p5, '').replace(p4,'').replace(p6,'').replace(p7,'');
+            var p6 = /<p>原标题.*/
+            s = s.replace(p1, '').replace(p2, '').replace(p5, '').replace(p4,'').replace(p6,'');
             plist[i].outerHTML = s;
             //console.log(s);
         }
