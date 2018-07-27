@@ -39,6 +39,9 @@
         //description
         var description = document.getElementById('description');
         description.innerHTML = description.innerHTML.replace(/[\s\S]*/,'');
+        //writer
+        var writer = document.getElementById('writer');
+        writer.setAttribute("value", "晨风");
         //arcrank
         var arcrank = document.getElementById('arcrank');
         //arcrank.removeChild( arcrank.childNodes[1] );
