@@ -30,7 +30,7 @@
     function createBtn() {
         var div = document.createElement("div");
         div.setAttribute("style", "font-size:16px !important");
-        div.innerHTML = "伟";
+        div.innerHTML = "✪";
         toolbar.appendChild(div);
         div.addEventListener('click', Event);
     }
@@ -41,7 +41,11 @@
         description.innerHTML = description.innerHTML.replace(/[\s\S]*/,'');
         //arcrank
         var arcrank = document.getElementById('arcrank');
-        arcrank.removeChild( arcrank.childNodes[1] );
+        //arcrank.removeChild( arcrank.childNodes[1] );
+        var newopt=document.createElement('option');
+        newopt.setAttribute('value','0');
+        //newopt.text='开放';
+        arcrank.replaceChild(newopt,arcrank.childNodes[1] );
         //iframe
         var iframe = document.getElementsByTagName('iframe')[0];
         var html = iframe.contentWindow.document;
