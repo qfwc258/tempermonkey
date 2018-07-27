@@ -66,7 +66,8 @@
             var p4 = /align="center"/;
             var p5 = /<br.+>/;
             var p6 = /<p>本文链接地址[\s\S]*/;
-            s = s.replace(p1, '').replace(p2, '').replace(p3, '').replace(p5, '').replace(p4,'').replace(p6,'');
+            var p7 = /<p>原标题.*/
+            s = s.replace(p1, '').replace(p2, '').replace(p3, '').replace(p5, '').replace(p4,'').replace(p6,'').replace(p7,'');
             plist[i].outerHTML = s;
             //console.log(s);
         }
