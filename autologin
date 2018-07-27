@@ -1,0 +1,16 @@
+// ==UserScript==
+// @name         login
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  autologin
+// @author       You
+// @match        *hnhbxww.com/adminVIP/login.php*
+// @grant        none
+// ==/UserScript==
+(function() {
+ $(function(){
+   $('.loginuser').val("");
+   $('.loginpwd').val("");
+   $('.loginbtn').click();
+});
+})();
