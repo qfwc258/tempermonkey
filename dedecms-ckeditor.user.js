@@ -31,15 +31,18 @@
     function createBtn() {
         var div = document.createElement("div");
         div.setAttribute("style", "font-size:16px !important");
+        div.setAttribute("id", "cwweditor");
         div.innerHTML = "✪";
         toolbar.appendChild(div);
         div.addEventListener('click', Event);
     }
 
     function createBtn2(){
+        var div = document.createElement("div");
+        div.setAttribute("id", "btn");
         var btn = '<input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" class="np" border="0" style="cursor:pointer">';
-        var inp = document.getElementById('cke_62');
-        inp.outerHTML+=btn;
+        var inp = document.getElementById('cwweditor');
+        inp.innerHTML+=btn;
     }
 
     function Event() {
