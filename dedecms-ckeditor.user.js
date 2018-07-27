@@ -18,6 +18,7 @@
     setTimeout(function() {
         getToolbar();
         createBtn();
+        createBtn2();
         Event();
     }, 1000);
 
@@ -33,6 +34,12 @@
         div.innerHTML = "✪";
         toolbar.appendChild(div);
         div.addEventListener('click', Event);
+    }
+
+    function createBtn2(){
+        var btn = '<input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" class="np" border="0" style="cursor:pointer">';
+        var inp = document.getElementById('cke_62');
+        inp.outerHTML+=btn;
     }
 
     function Event() {
