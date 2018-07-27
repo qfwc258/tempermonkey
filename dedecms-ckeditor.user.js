@@ -38,7 +38,7 @@
     }
 
     function createBtn2(){
-        var btn = '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" class="np" border="0" style="cursor:pointer"></span>';
+        var btn = '<span style="margin-left:10px;"><input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" class="np" border="0" style="cursor:pointer"></span>';
         var inp = document.getElementById('cw');
         inp.innerHTML+=btn;
     }
