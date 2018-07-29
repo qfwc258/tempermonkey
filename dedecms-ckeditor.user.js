@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  ckeditor
 // @author       chenwei
-// @include      *hnhbxww.com/adminVIP/article_edit.php*
+// @include      *hnhbxww.com/adminVIP/article_edit.php?aid=*
 // @license      MIT
 // @run-at       document-end
 // @grant        unsafeWindow
@@ -30,7 +30,7 @@
 
     function createBtn() {
         var div = document.createElement("div");
-        div.setAttribute("style", "font-size:16px !important");
+        div.setAttribute("style", "font-size:18px !important");
         div.setAttribute("id", "cw");
         div.innerHTML = "✪";
         toolbar.appendChild(div);
@@ -38,7 +38,7 @@
     }
 
     function createBtn2(){
-        var btn = '<span style="margin-left:10px;"><input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" class="np" border="0" style="cursor:pointer"></span>';
+        var btn = '<span style="margin-left:100px;"><input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" class="np" border="0" style="cursor:pointer"></span>';
         var inp = document.getElementById('cw');
         inp.innerHTML+=btn;
     }
