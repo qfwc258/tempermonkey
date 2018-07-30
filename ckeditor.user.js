@@ -4,13 +4,23 @@
 // @version      1.0
 // @description  ckeditor
 // @author       chenwei
+// @include      *hnhbxww.com/adminVIP/login.php*
 // @include      *hnhbxww.com/adminVIP/article_edit.php*
+// @include      *hnhbxww.com/adminVIP/content_list.php*
 // @license      MIT
 // @run-at       document-end
 // @grant        unsafeWindow
 // ==/UserScript==
 
 (function() {
+    //登陆
+ if (isURL("http://hnhbxww.com/adminVIP/login.php")){
+   $(function(){
+   $('.loginuser').val("chenw");
+   $('.loginpwd').val("chenw");
+   $('.loginbtn').click();
+});
+   }
     //Set
     var toolbar;
 
