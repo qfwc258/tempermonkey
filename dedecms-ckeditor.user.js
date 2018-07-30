@@ -99,7 +99,7 @@
            document.getElementById('typeid2').setAttribute('value','13');
             return;
         };
-        if(zlmtitle.match(/娄底|涟源/)!=null){
+        if(zlmtitle.match(/娄底|涟源|冷水江/)!=null){
            document.getElementById('typeid2').setAttribute('value','23');
             return;
         };
@@ -121,6 +121,14 @@
         };
          if(zlmtitle.match(/常德/)!=null){
            document.getElementById('typeid2').setAttribute('value','17');
+            return;
+        };
+        if(zlmtitle.match(/郴州/)!=null){
+           document.getElementById('typeid2').setAttribute('value','21');
+            return;
+        };
+        if(zlmtitle.match(/岳阳|平江/)!=null){
+           document.getElementById('typeid2').setAttribute('value','16');
             return;
         };
     }
