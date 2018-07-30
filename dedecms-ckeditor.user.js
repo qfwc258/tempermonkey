@@ -21,6 +21,7 @@
         createBtn();
         createBtn2();
         Event();
+        fbt();
     }, 1000);
 
 
@@ -54,6 +55,7 @@
         var n = Math.floor(Math.random() * author.length + 1)-1;
         var writer = document.getElementById('writer');
         writer.setAttribute("value",author[n]);
+
         //arcrank
         var arcrank = document.getElementById('arcrank');
         //arcrank.removeChild( arcrank.childNodes[1] );
@@ -87,6 +89,42 @@
         }
     }
 
+    function fbt(){
+        var zlmtitle=document.getElementById('title').value;
+        if(zlmtitle.match(/长沙|宁乡|浏阳|望城|天心区/)!=null){
+           document.getElementById('typeid2').setAttribute('value','12');
+            return;
+        };
+        if(zlmtitle.match(/株洲|醴陵|炎陵|茶陵|攸县/)!=null){
+           document.getElementById('typeid2').setAttribute('value','13');
+            return;
+        };
+        if(zlmtitle.match(/娄底|涟源/)!=null){
+           document.getElementById('typeid2').setAttribute('value','23');
+            return;
+        };
+        if(zlmtitle.indexOf("湘潭")!=-1){
+           document.getElementById('typeid2').setAttribute('value','14');
+            return;
+        };
+        if(zlmtitle.match(/衡阳|常宁/)!=null){
+           document.getElementById('typeid2').setAttribute('value','15');
+            return;
+        };
+        if(zlmtitle.match(/益阳/)!=null){
+           document.getElementById('typeid2').setAttribute('value','77');
+            return;
+        };
+        if(zlmtitle.indexOf("张家界")!=-1){
+           document.getElementById('typeid2').setAttribute('value','19');
+            return;
+        };
+         if(zlmtitle.match(/常德/)!=null){
+           document.getElementById('typeid2').setAttribute('value','17');
+            return;
+        };
+    }
+
     if (isURL("http://hnhbxww.com/adminVIP/article_edit.php")) {
         if (window.find("管理文章")) {
             window.location.href = "/adminVIP/content_list.php?arcrank=-1";
@@ -95,7 +133,7 @@
     }
 
     function isURL(x){
-    return window.location.href.indexOf(x) != -1;
+    return window.location.href.indexOf(x)!= -1;
 }
 
 })();
