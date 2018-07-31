@@ -32,7 +32,7 @@
         createBtn2();
         Event();
         fbt();
-        document.getElementById('cwinput').click();
+        //document.getElementById('cwinput').click();
     }, 1000);
 
 
@@ -102,46 +102,63 @@
 
     function fbt(){
         var zlmtitle=document.getElementById('title').value;
-        if(zlmtitle.match(/长沙|宁乡|浏阳|望城|天心区/)!=null){
+        if(zlmtitle.match(/岳麓区|芙蓉区|天心区|开福区|雨花区|浏阳|长沙|望城|宁乡/)!=null){
            document.getElementById('typeid2').setAttribute('value','12');
             return;
         };
-        if(zlmtitle.match(/株洲|醴陵|炎陵|茶陵|攸县/)!=null){
+        if(zlmtitle.match(/天元区|荷塘区|芦淞区|石峰区|醴陵|株洲|炎陵|茶陵|攸县/)!=null){
            document.getElementById('typeid2').setAttribute('value','13');
             return;
         };
-        if(zlmtitle.match(/娄底|涟源|冷水江/)!=null){
+        if(zlmtitle.match(/娄星区|冷水江|涟源|新化|双峰/)!=null){
            document.getElementById('typeid2').setAttribute('value','23');
             return;
         };
-        if(zlmtitle.indexOf("湘潭")!=-1){
+        if(zlmtitle.match(/雨湖区|岳塘区|湘乡|韶山|湘潭/)!=null){
            document.getElementById('typeid2').setAttribute('value','14');
             return;
         };
-        if(zlmtitle.match(/衡阳|常宁/)!=null){
+        if(zlmtitle.match(/石鼓区|雁峰区|珠晖区|蒸湘区|南岳区|耒阳|常宁|衡阳|衡东|衡山|衡南|祁东/)!=null){
            document.getElementById('typeid2').setAttribute('value','15');
             return;
         };
-        if(zlmtitle.match(/益阳/)!=null){
+        if(zlmtitle.match(/赫山区|资阳区|沅江|桃江|南县|安化/)!=null){
            document.getElementById('typeid2').setAttribute('value','77');
             return;
         };
-        if(zlmtitle.indexOf("张家界")!=-1){
+        if(zlmtitle.match(/永定区|武陵源区|慈利|桑植/)!=null){
            document.getElementById('typeid2').setAttribute('value','19');
             return;
         };
-         if(zlmtitle.match(/常德/)!=null){
+         if(zlmtitle.match(/武陵区|鼎城区|津市|澧县|临澧|桃源|汉寿|安乡|石门/)!=null){
            document.getElementById('typeid2').setAttribute('value','17');
             return;
         };
-        if(zlmtitle.match(/郴州/)!=null){
+        if(zlmtitle.match(/北湖区|苏仙区|资兴|宜章|汝城|安仁|嘉禾|临武|桂东|永兴|桂阳/)!=null){
            document.getElementById('typeid2').setAttribute('value','21');
             return;
         };
-        if(zlmtitle.match(/岳阳|平江/)!=null){
+        if(zlmtitle.match(/岳阳楼区|君山区|云溪区|临湘|汨罗|岳阳|湘阴|平江|华容/)!=null){
            document.getElementById('typeid2').setAttribute('value','16');
             return;
         };
+        if(zlmtitle.match(/双清区|大祥区|北塔区|武冈|邵东|洞口|新邵|绥宁|新宁|邵阳|隆回|城步/)!=null){
+           document.getElementById('typeid2').setAttribute('value','20');
+            return;
+        };
+        if(zlmtitle.match(/冷水滩区|芝山区|祁阳|蓝山|宁远|新田|东安|江永|道县|双牌|江华/)!=null){
+           document.getElementById('typeid2').setAttribute('value','22');
+            return;
+        };
+        if(zlmtitle.match(/鹤城区|洪江|会同|沅陵|辰溪|溆浦|中方|新晃|芷江|通道|靖州|麻阳/)!=null){
+           document.getElementById('typeid2').setAttribute('value','18');
+            return;
+        };
+        if(zlmtitle.match(/吉首|古丈|龙山|永顺|凤凰|泸溪|保靖|花垣/)!=null){
+           document.getElementById('typeid2').setAttribute('value','25');
+            return;
+        };
+
     }
 
     if (isURL("http://hnhbxww.com/adminVIP/article_edit.php")) {
@@ -156,8 +173,8 @@
 }
     //自动按顺序点击
 
-  if (isURL("http://hnhbxww.com/adminVIP/content_list.php?arcrank=-1")) {
+  /**if (isURL("http://hnhbxww.com/adminVIP/content_list.php?arcrank=-1")) {
       document.getElementsByTagName("a")[0].click();
-  }
+  }**/
 
 })();
