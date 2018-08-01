@@ -7,7 +7,7 @@
 // @include      *hnhbxww.com/adminVIP/login.php*
 // @include      *hnhbxww.com/adminVIP/article_edit.php*
 // @include      *hnhbxww.com/adminVIP/content_list.php*
-// @include      *hnhbxww.com/adminVIP/article_add.php*
+/** @include      *hnhbxww.com/adminVIP/article_add.php**/
 // @license      MIT
 // @run-at       document-end
 // @grant        unsafeWindow
@@ -179,13 +179,13 @@
       document.getElementsByTagName("a")[0].click();
   }**/
 
-    if (isURL("http://hnhbxww.com/adminVIP/article_add.php")) {
+  /**  if (isURL("http://hnhbxww.com/adminVIP/article_add.php")) {
       var tr = document.getElementById('cke_contents_body');
         tr.outerHTML=tr.outerHTML.replace('<iframe','<iframe id="cweditor"');
         alert(tr);
     //var tr = document.getElementsByClassName('cke_show_borders');
     //alert(tr);
         return;
-        }
+        }**/
 
 })();
