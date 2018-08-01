@@ -59,6 +59,8 @@
     }
 
     function Event() {
+        var iframe = document.getElementsByTagName('iframe')[0];
+        var html = iframe.contentWindow.document;
         //description
         var description = document.getElementById('description');
         description.innerHTML = description.innerHTML.replace(/[\s\S]*/,'');
@@ -75,12 +77,7 @@
         newopt.setAttribute('value','0');
         newopt.innerText='开放浏览';
         arcrank.replaceChild(newopt,arcrank.childNodes[1] );
-        //iframe
-        var iframe = document.getElementsByTagName('iframe')[0];
-        var html = iframe.contentWindow.document;
-        var body = html.body;
-        body.innerHTML = body.innerHTML.replace(/<p>本文链接地址[\s\S]*/,'').replace(/<p><strong>上一篇[\s\S]*/,'');
-        body.innerHTML = body.innerHTML.replace(/<p><span>人民日报客户端下载[\s\S]*/,'').replace(/<p>【<strong>中国环保在线.+】/,'');
+                //body.innerHTML = body.innerHTML;
         //title
         //var ititle = html.getElementById('activity-name').innerHTML;
         //var title = document.getElementById('title');
@@ -92,13 +89,17 @@
             //console.log(s);
             var p1 = /(&nbsp;)/gi;
             var p2 = /(　)/gi;
-            var p4 = /align="center"/;
-            var p5 = /<br.+>/;
-            var p6 = /<p>原标题.*/
+            var p4 = /align="center"/gi;
+            var p5 = /<br.+>/gi;
+            var p6 = /<p>原标题.*/gi;
             s = s.replace(p1, '').replace(p2, '').replace(p5, '').replace(p4,'').replace(p6,'');
             plist[i].outerHTML = s;
             //console.log(s);
         }
+        //iframe
+        var body = html.body;
+        var xbody = body.innerHTML.replace(/<p>本文链接地址[\s\S]*/gi,'').replace(/<p><strong>上一篇[\s\S]*/gi,'').replace(/<p>【<strong>中国环保在线.+】/gi,'').replace(/<p><span>人民日报客户端下载[\s\S]*/gi,'');
+        body.innerHTML=xbody;
     }
 
     function fbt(){
@@ -179,11 +180,12 @@
   }**/
 
     if (isURL("http://hnhbxww.com/adminVIP/article_add.php")) {
-        //var tr=document.getElementById('typeid')
-      //var tr = document.getElementsByClassName('cke_contents');
+      var tr = document.getElementById('cke_contents_body');
+        tr.outerHTML=tr.outerHTML.replace('<iframe','<iframe id="cweditor"');
+        alert(tr);
     //var tr = document.getElementsByClassName('cke_show_borders');
     //alert(tr);
-        //return;
+        return;
         }
 
 })();
