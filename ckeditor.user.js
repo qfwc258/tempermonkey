@@ -25,6 +25,7 @@
     //全局变量
     var toolbar;
 
+
     //运行
     setTimeout(function() {
         window.onerror = function() { return true; };
@@ -33,7 +34,7 @@
         createBtn2();
         Event();
         fbt();
-        autoinput();
+        //autoinput();
     }, 1000);
 
 
@@ -173,14 +174,13 @@
         return window.location.href.indexOf(x) != -1;
     }
     //自动按顺序点击
-    var autoqb;
+
     function autoinput() {
-        autoqb = 1;
         document.getElementById('cwinput').click();
     }
 
-
-    if (isURL("http://hnhbxww.com/adminVIP/content_list.php?arcrank=-1") && (autoqb = 1)) {
+    //var autourl = "http://hnhbxww.com/adminVIP/content_list.php?arcrank=-1";
+    if (isURL(autourl)) {
         document.getElementsByTagName("a")[0].click();
     }
 
