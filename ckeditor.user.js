@@ -17,8 +17,8 @@
     //登陆
     if (isURL("http://hnhbxww.com/adminVIP/login.php")) {
         $(function() {
-            $('.loginuser').val("chenw");
-            $('.loginpwd').val("chenw");
+            $('.loginuser').val("");
+            $('.loginpwd').val("");
             $('.loginbtn').click();
         });
     }
